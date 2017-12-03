@@ -15,6 +15,17 @@ class GetAppointment_model extends CI_Model {
      $result = $result->result_array();
      return $result;
   }
+  public function getAppoId($date, $time) {
+           $sql = "
+                select
+                  a.id
+                    from clinic_appointment a 
+                   where appo_date = '$date' 
+                   and appo_time = '$time'";
+           $query = $this->db->query($sql);
+           $result = $query->result_array();
+           return $result;
+  }
   public function getBookingDetailsPersonModel($dateSearch){
       $sql = "
             select

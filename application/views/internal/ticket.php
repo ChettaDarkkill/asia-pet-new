@@ -8,18 +8,19 @@
     <script src="<?php echo $a; ?>assets/js/jquery-1.12.4.js"></script>
     <div class="container">
       <div class="row">
-        <h2 class="text-center">ใบนัด</h2>
+        <h2 class="text-center">ใบนัดตรวจ</h2>
+        <h3 class="text-center">เอเชียเพ็ทคลินิก</h3>
                 <div class="row">
                     <div class="col-md-2 text-center">
                     </div>
                      <div class="col-md-8 text-center">
                         <div class="box">
                             <div class="box-content">
-                                <div style = 'text-align: left;!important; font-size:16px'>
-                                <span><strong>เลขที่นัดหมาย : </strong></span><span><?php echo $data['trans_id']; ?></span><br/>
-                                <span><strong>ชื่อ : </strong></span><span><?php echo $user['first_name'] . " " . $user['last_name'] ; ?></span><br/>
+                                <div style = 'text-align: left;!important; margin-left:10px;  font-size:16px'>
+<!--                                 <span><strong>เลขที่นัดหมาย : </strong></span><span><?php echo $data['trans_id']; ?></span><br/>
+                                <span><strong>ชื่อ : </strong></span><span><?php echo $user['first_name'] . " " . $user['last_name'] ; ?></span><br/> -->
                                 <span><strong>ที่อยู่ : </strong></span><span><?php echo $user['address']; ?></span><br/>
-                                <span><strong>เบอร์ติดต่อ : </strong></span><span><?php echo $user['mobile']; ?></span><br/><hr/>
+                                <span><strong>เบอร์โทร : </strong></span><span><?php echo $user['mobile']; ?></span>&nbsp;&nbsp;<span><strong>เวลาเปิด-ปิด : </strong></span><span>08.00-20.00</span><br/><hr/>
                                 <span><strong>ประเภทสัตว์ : </strong></span><span><?php echo $data['appo_animal']; ?></span><br/>
                                 <span><strong>เรื่องที่นัดหมาย : </strong></span><span><?php echo $data['appo_name']; ?></span><br/>
                                 <span><strong>รายละเอียด : </strong></span><span><?php echo $data['appo_details']; ?></span><br/>
@@ -44,8 +45,8 @@
                                         </table>
                                     </div>
                                 </div>
-                                <span style = "color:red"> *** กรุณามาให้ตรงเวลาที่นัดหมายและนำใบนัดหมายมาด้วยทุกครั้งเพื่อความสะดวกในการให้บริการ</span><br/>
-                                <span> สถานที่ : เอเชียเพทออนไลน์ เลขที่ 320/12 ถนนพหลโยธิน ตำบลนครสวรรค์ตก อำเภอเมือง จังหวัดนครสวรรค์</span>
+                                <span style = "color:red"> *** โปรดนำบัตรมาด้วยทุกครั้ง</span><br/>
+                                <!-- <span> สถานที่ : เอเชียเพทออนไลน์ เลขที่ 320/12 ถนนพหลโยธิน ตำบลนครสวรรค์ตก อำเภอเมือง จังหวัดนครสวรรค์</span> -->
                                 <br/><br/>
                                 <a id = "print" onclick="myFunction()" class="btn btn-block btn-primary">ปริ้นใบนัด</a>
                             </div>

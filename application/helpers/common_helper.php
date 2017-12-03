@@ -22,3 +22,18 @@ if (! function_exists('getNewsData')) {
 	    return $CI->newsModel->getNews();
     }
 }
+
+if (! function_exists('getAppoId')) {
+  function getAppoId($date, $time){
+      // Get a reference to the controller object
+      $CI = get_instance();
+
+      // You may need to load the model if it hasn't been pre-loaded
+      $CI->load->model('Customer/GetAppointment_model', 'appoModel');
+
+      $result = $CI->appoModel->getAppoId($date, $time);
+      $id = $result[0]['id'];
+      // Call a function of the model
+      return $id;
+    }
+}
