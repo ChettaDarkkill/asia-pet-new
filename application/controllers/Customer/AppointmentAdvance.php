@@ -27,6 +27,9 @@ class AppointmentAdvance extends MX_Controller {
   }
   public function addAppo(){
     $data = $this->input->post('data');
+    // echo '<pre>';
+    // print_r($data);
+    // die;
     $arr = array();
      foreach ($data as $key => $value) {
        switch ($value['name']) {
@@ -49,8 +52,15 @@ class AppointmentAdvance extends MX_Controller {
            break;
        }
      }
-     $this->appointment_advance_model_model->insertAppo($arr);
-     echo 200;
+
+     $currentDate = date('Y-m-d');
+     $bookDate = $arr['appo_date'];
+     if($bookDate < $currentDate) {
+        echo 'not_book';
+     } else {
+       $this->appointment_advance_model_model->insertAppo($arr);
+       echo 200;
+     }
   }
   public function printTicket($id) {
     $data['data'] = $this->see_appointment_model->getAppointDetail($id);

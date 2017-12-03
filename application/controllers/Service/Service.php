@@ -123,16 +123,21 @@ class Service extends MXAdmin_Controller {
     );
 
     $id = $this->service_model->insertOrder($arr);
-    redirect('/Service/Service/optionCharge/'.$id);
+    redirect('/Service/Service/optionCharge/'.$id.'?app_re_id='.$appo_id);
 
   }
   public function postOption(){
     $sum = 0;
     $product = $this->input->post('product');
     $service_id = $this->input->post('service_id');
+    // echo $service_id . "<br/>";
+    // echo "<pre>";
+    // print_r($product);
+    // die;
     foreach ($product as $key => $value) {
          $sum += $value;
     }
+    $this->service_model->clearOldService($service_id);
     if($sum > 0 ){
       foreach ($product as $key => $value) {
         $price = $this->service_model->getPrice($key);
@@ -164,6 +169,7 @@ class Service extends MXAdmin_Controller {
         'path' => 'admin/service/get_service_takecare',
         'data' => $data,
     );
+    $data['id_option'] = $id;
     if($flag == 1) {
        $data['flag'] = $flag;
        $data['txtAlert'] = "รายการที่อนุมัติแล้ว";
@@ -208,7 +214,14 @@ class Service extends MXAdmin_Controller {
   }
   public function searchAppo(){
     $search = $this->input->post('search');
-    $dataSearch = $this->service_model->searchAppo($search);
+    $typeOfSearch = $this->input->post('typeOfSearch');
+    if($typeOfSearch == 1)  { 
+        $dataSearch = $this->service_model->searchAppo($search);
+    } else if($typeOfSearch == 2) {
+        $dataSearch = $this->service_model->searchAppo2($search);
+    } else {
+        $dataSearch = $this->service_model->searchAppo3($search);
+    }
     if($search == '' || empty($search )){
       redirect('/Service/Service/getService');
     } else {

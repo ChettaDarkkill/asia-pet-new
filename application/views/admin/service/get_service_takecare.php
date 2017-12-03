@@ -61,7 +61,7 @@
                                         <div class="form-group">
                                             <label for="description" class="col-sm-3 control-label"></label>
                                             <div class="col-sm-9">
-                                                <a href="<?php echo $a.'index.php/Admin/Admin/'; ?>" class="btn btn-sm btn-warning" >ย้อนกลับ</a>
+                                                <a href="<?php echo $a.'index.php/Service/Service/getService'; ?>" class="btn btn-sm btn-warning" >ย้อนกลับ</a>
                                                 <button type = "submit" class="btn btn-sm btn-success">ดำเนินการต่อ</button>
                                                 <!-- <a href="<?php echo $a.'index.php/Service/Service/optionCharge/'; ?>" class="btn btn-sm btn-success" >ดำเนินการต่อ</a> -->
                                             </div>

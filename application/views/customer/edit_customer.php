@@ -67,6 +67,66 @@
 
             <!-- Text input-->
             <div class="form-group">
+              <label class="col-md-3 control-label" for="twitter">เลขที่สมาชิก</label>  
+              <div class="col-md-6">
+              <input id="member_id" name = "member_id" type="text" placeholder="เลขที่สมาชิก" class="form-control input-md" value = "<?php echo $listUser['member_id']; ?>">
+                
+              </div>
+            </div>
+            <hr>
+            <h3>รายละเอียดอื่นๆ</h3> 
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="twitter">ชื่อสัตว์</label>  
+              <div class="col-md-6">
+              <input id="animal_name" name = "animal_name" type="text" placeholder="ชื่อสัตว์" class="form-control input-md" value = "<?php echo $listUser['animal_name']; ?>">
+                
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="twitter">วันเกิดสัตว์</label>  
+              <div class="col-md-6">
+                    <div class="input-group date form_date col-md-12" data-date="" data-date-format="yyyy-mm-dd" data-link-field="appo_date" data-link-format="yyyy-mm-dd">
+                        <input id="appo_birth_date_show_animal" name="appo_birth_date_show_animal"  class="form-control" size="16" placeholder="วันเกิดสัตว์" type="text" value="<?php echo $listUser['appo_birth_date_show_animal']; ?>" readonly >
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                    <input type="hidden" id="appo_birth_date_animal" name="appo_birth_date_animal" value="<?php echo $listUser['appo_birth_date_show_animal']; ?>" />
+                
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="twitter">พันธุ์</label>  
+              <div class="col-md-6">
+              <input id="breed" name = "breed" type="text" placeholder="พันธุ์" class="form-control input-md" value = "<?php echo $listUser['breed']; ?>">
+                
+              </div>
+            </div>
+            <!-- Text input-->
+            <?php 
+                $sex = $listUser['gender'];
+            ?>
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="twitter">เพศ</label>  
+              <div class="col-md-6">
+                <div class="radio">
+                  <label><input <?php echo $sex == 1 ? "checked" : "";  ?> type="radio" name="gender" id="gender" value="1">ตัวผู้</label>
+                  <label><input <?php echo $sex == 0 ? "checked" : "";  ?>  type="radio" name="gender" id="gender" value="0">ตัวเมีย</label>
+                </div>              
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
+              <label class="col-md-3 control-label" for="twitter">สี</label>  
+              <div class="col-md-6">
+              <input id="color" name = "color" type="text" placeholder="สี" class="form-control input-md" value = "<?php echo $listUser['color']; ?>">
+                
+              </div>
+            </div>
+            <!-- Text input-->
+            <div class="form-group">
               <label class="col-md-3 control-label" for="twitter"></label>  
               <div class="col-md-6">
               <button type="submit" id="saveRegis" class="btn btn-primary" data-action="save" role="button">บันทึก</button>
@@ -114,6 +174,16 @@
 </div>    
 </div>
 <script>
+      $('.form_date').datetimepicker({
+        // language:  'th',
+        weekStart: 1,
+        todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0
+    });
   // Wait for the DOM to be ready
   $(function() {
     // Initialize form validation on the registration form.

@@ -69,7 +69,7 @@
                                   </tbody>
                               </table>
                               <button onclick = "myFunction()" type="button" id = "ppp" class="btn btn-success btn-lg btn-block">
-                                  ปลิ้นใบเสร็จ  <span class="glyphicon glyphicon-chevron-right"></span>
+                                  ปริ้นใบเสร็จ  <span class="glyphicon glyphicon-chevron-right"></span>
                               </button></td>
                           </div>
                           <center><span>เอเชียเพทออนไลน์ เลขที่ 320/12 ถนนพหลโยธิน ตำบลนครสวรรค์ตก อำเภอเมือง จังหวัดนครสวรรค์</span></center>

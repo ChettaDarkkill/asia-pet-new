@@ -2,7 +2,13 @@
 
 class Customer_model extends CI_Model {
 
-
+        public function delete_appointment_advance($dd,$tt) {
+          $this->db->delete('clinic_appointment', 
+            array(
+              'appo_date' => $dd,
+              'appo_time' => $tt
+            ));
+        }
         public function getAdminByIdRequest($id)
         {
            $this->db->where('id', $id);

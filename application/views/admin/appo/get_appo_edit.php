@@ -1,4 +1,7 @@
-<?php $a =  base_url(); ?>
+<?php 
+$memberId = $data[0]['member_id'];
+$a =  base_url(); 
+?>
         <div id="page-wrapper">
             <div class="container-fluid">
                 <!-- Page Heading -->
@@ -87,7 +90,7 @@
                                 </div>
                             </div>            
                         </div> <!-- / panel preview -->
-                        <a href="<?php echo $a.'index.php/Admin/Admin/editAppo'; ?>" class="btn btn-sm btn-warning">ย้อนกลับ</a>
+                        <a href="<?php echo $a.'index.php/Admin/User/getListUserActivity/' . $memberId ; ?>" class="btn btn-sm btn-warning">ย้อนกลับ</a>
                         <?php if(!isset($flag)){ ?>
                             <a href = "<?php echo $a.'index.php/Admin/Appointment/approveAppo/'.$data[0]['id']; ?>" class="btn btn-sm btn-success" onclick="return confirm('คุณต้องการอนุมัติจริงหรือไม่');">อนุมัติ</a>
                         <?php } ?>

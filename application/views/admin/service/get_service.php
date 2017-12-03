@@ -14,11 +14,21 @@
                     <div class="col-md-6 col-md-offset-3">
 
                         <!-- Search Form -->
-                        <form method = "post" role="form" action = "<?php echo $a.'index.php/Service/Service/searchAppo/'; ?>"id = "searchAppo" name = "searchAppo"> 
-                        
+                        <form method = "post" role="form" action = "<?php echo $a.'index.php/Service/Service/searchAppo/'; ?>" id = "searchAppo" name = "searchAppo"> 
+                            <div class="row">
+                              <h2 class="text-center">ค้นหาโดย .. </h2>
+                                <div class="radio">
+                                  <label><input value="1" checked type="radio" name="typeOfSearch">เลขที่นัดหมาย</label>
+                                </div>
+                                <div class="radio">
+                                  <label><input value="2" type="radio" name="typeOfSearch">ชื่อลูกค้า</label>
+                                </div>
+                                <div class="radio">
+                                  <label><input value="3" type="radio" name="typeOfSearch">ชื่อสัตว์เลี้ยง</label>
+                                </div>
+                            </div>
                         <!-- Search Field -->
                             <div class="row">
-                                <h2 class="text-center">ค้นหาจากเลขที่นัดหมาย</h2>
                                 <div class="form-group">
                                     <div class="input-group">
                                         <input class="form-control" type="text" id = "search" name="search" placeholder="ค้นหา"/>
@@ -68,7 +78,7 @@
   $('#btnSearch').click(function(){
      var search = document.getElementById('search').value;
      if(search == ""){
-        alert('กรุณากรอกเลขที่นัดหมาย');
+        alert('กรุณากรอกข้อมูลการค้นหา');
         return false;
      }else{
         $('#searchAppo').submit();

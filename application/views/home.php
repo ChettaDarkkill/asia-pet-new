@@ -10,11 +10,11 @@
               <div class="features-table">
                   <ul>
                       <h1>บริการของเรา</h1>
-                      <li>ขอนัดหมายการเข้ารับบริการล่วงหน้าได้ </li>
-                        <li>ตรวจสอบการนัดหมายของตนเองได้</li>
-                        <li>เปลี่ยนแปลง เวลา การนัดหมายล่วงหน้าได้</li>
-                        <li>ติดตามข้อมูลข่าวสารประชาสัมพันธ์ของคลินิกสัตว์เลี้ยงเอเชียเพ็ทได้</li>
-                        <li>ล็อคอินเข้าใช้ระบบในส่วนของลูกค้าได้</li>
+                      <li data-toggle="modal" data-target="#regisModal">ขอนัดหมายการเข้ารับบริการล่วงหน้าได้ </li>
+                        <li data-toggle="modal" data-target="#regisModal">ตรวจสอบการนัดหมายของตนเองได้</li>
+                        <li data-toggle="modal" data-target="#regisModal">เปลี่ยนแปลง เวลา การนัดหมายล่วงหน้าได้</li>
+                        <li data-toggle="modal" data-target="#regisModal">ติดตามข้อมูลข่าวสารประชาสัมพันธ์ของคลินิกสัตว์เลี้ยงเอเชียเพ็ทได้</li>
+                        <li data-toggle="modal" data-target="#regisModal">ล็อคอินเข้าใช้ระบบในส่วนของลูกค้าได้</li>
                     </ul>
                 </div>
             </div>
@@ -119,9 +119,62 @@
               </div>
               <div class="form-group">
                 <label for="exampleInputPassword1">เบอร์โทรศัพท์</label>
-                <input type="text" class="form-control" id="mobile" name = "mobile" placeholder="เบอร์โทรศัพท์">
+                <input type="number" class="form-control" id="mobile" name = "mobile" placeholder="เบอร์โทรศัพท์">
               </div>
-            
+              <div class="form-group">
+                <label for="exampleInputPassword1">เลขที่สมาชิก</label>
+                <input type="number" class="form-control" id="member_id" name = "member_id" placeholder="เลขที่สมาชิก">
+              </div>
+             <hr/>
+              <div class="form-group">
+                <h3>รายละเอียดอื่นๆ</h3>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputPassword1">ชื่อสัตว์</label>
+                <input type="text" class="form-control" id="animal_name" name = "animal_name" placeholder="ชื่อสัตว์">
+              </div>
+            <div class="form-group">
+              <label>วันเกิดสัตว์</label>  
+                    <div class="input-group date form_date col-md-12" data-date="" data-date-format="yyyy-mm-dd" data-link-field="appo_date" data-link-format="yyyy-mm-dd">
+                        <input id="appo_birth_date_show_animal" name="appo_birth_date_show_animal"  class="form-control" size="16" placeholder="วันเกิดสัตว์" type="text" value="" readonly>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                    </div>
+                    <input type="hidden" id="appo_birth_date_animal" name="appo_birth_date_animal" value="" />
+            </div>
+              <div class="form-group">
+              <label>ชนิดของสัตว์</label>  
+                <select class="form-control" id="appo_animal" name="appo_animal">
+                   <option value = "">กรุณาเลือก</option>
+                  <option value = "สุนัข (Dog)">สุนัข (Dog)</option>
+                  <option value = "แมว (Cat)">แมว (Cat)</option>
+                  <option value = "กระต่าย (Rabbit)">กระต่าย (Rabbit)</option>
+                  <option value = "ชินชิล่า (Chinchilla)">ชินชิล่า (Chinchilla)</option>
+                  <option value = "ชูการ์ ไกรเดอร์ (Suger Glider)">ชูการ์ ไกรเดอร์ (Suger Glider)</option>
+                  <option value = "กระรอก (Squirrel)">กระรอก (Squirrel) </option>
+                  <option value = "นก (Bird)">นก (Bird)</option>
+                  <option value = "แฮมสเตอร์ (Hamster)">แฮมสเตอร์ (Hamster)</option>
+                  <option value = "แกสบี้ (Guinea Pig)">แกสบี้ (Guinea Pig)</option>
+                  <option value = "ปลา (Fish)">ปลา (Fish)</option>
+                </select>                
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">พันธุ์</label>
+                <input type="text" class="form-control" id="breed" name = "breed" placeholder="พันธุ์">
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">เพศ</label>
+                <div class="radio">
+                  <label><input checked type="radio" name="gender" id="gender" value="1">ตัวผู้</label>
+                </div>
+                <div class="radio">
+                  <label><input type="radio" name="gender" id="gender" value="0">ตัวเมีย</label>
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="exampleInputPassword1">สี</label>
+                <input type="text" class="form-control" id="color" name = "color" placeholder="สี">
+            </div>
 
         </div>
         <div class="modal-footer">
@@ -137,6 +190,95 @@
 </div>
 
 <script>
+    $('.form_date').datetimepicker({
+        // language:  'th',
+        weekStart: 1,
+        todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0
+    });
+
+
+  $("#username").focusout( function (){
+        var url = "<?php echo $a.'index.php/Register/Register/getUsername'; ?>";
+        var data = $("#username").val();
+        var english = /^[A-Za-z0-9]*$/;
+
+        $.post( url , {'txtCheck' : data} , function( data ) {
+            if(data == 1) {
+              $("#username").val("");
+              alert("มี username นี้อยู่ในระบบแล้ว");
+              $("#username").focus();
+              return false;
+            }
+        });
+  });
+
+  $("#password").on("keypress", function(event) {
+
+    // Disallow anything not matching the regex pattern (A to Z uppercase, a to z lowercase and white space)
+    // For more on JavaScript Regular Expressions, look here: https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Regular_Expressions
+    var englishAlphabetAndWhiteSpace = /[A-Za-z0-9 ]/g;
+   
+    // Retrieving the key from the char code passed in event.which
+    // For more info on even.which, look here: http://stackoverflow.com/q/3050984/114029
+    var key = String.fromCharCode(event.which);
+    
+    //alert(event.keyCode);
+    
+    // For the keyCodes, look here: http://stackoverflow.com/a/3781360/114029
+    // keyCode == 8  is backspace
+    // keyCode == 37 is left arrow
+    // keyCode == 39 is right arrow
+    // englishAlphabetAndWhiteSpace.test(key) does the matching, that is, test the key just typed against the regex pattern
+    if (event.keyCode == 8 || event.keyCode == 37 || event.keyCode == 39 || englishAlphabetAndWhiteSpace.test(key)) {
+        return true;
+    }
+
+    // If we got this far, just return false because a disallowed key was typed.
+    return false;
+});
+
+$('#password').on("paste",function(e)
+{
+    e.preventDefault();
+});
+
+
+  $("#username").on("keypress", function(event) {
+
+    // Disallow anything not matching the regex pattern (A to Z uppercase, a to z lowercase and white space)
+    // For more on JavaScript Regular Expressions, look here: https://developer.mozilla.org/en-US/docs/JavaScript/Guide/Regular_Expressions
+    var englishAlphabetAndWhiteSpace = /[A-Za-z ]/g;
+   
+    // Retrieving the key from the char code passed in event.which
+    // For more info on even.which, look here: http://stackoverflow.com/q/3050984/114029
+    var key = String.fromCharCode(event.which);
+    
+    //alert(event.keyCode);
+    
+    // For the keyCodes, look here: http://stackoverflow.com/a/3781360/114029
+    // keyCode == 8  is backspace
+    // keyCode == 37 is left arrow
+    // keyCode == 39 is right arrow
+    // englishAlphabetAndWhiteSpace.test(key) does the matching, that is, test the key just typed against the regex pattern
+    if (event.keyCode == 8 || event.keyCode == 37 || event.keyCode == 39 || englishAlphabetAndWhiteSpace.test(key)) {
+        return true;
+    }
+
+    // If we got this far, just return false because a disallowed key was typed.
+    return false;
+});
+
+$('#username').on("paste",function(e)
+{
+    e.preventDefault();
+});
+
+
   // Wait for the DOM to be ready
   $(function() {
     // Initialize form validation on the registration form.
@@ -197,6 +339,12 @@
         // The key name on the left side is the name attribute
         // of an input field. Validation rules are defined
         // on the right side
+        
+        appo_animal: "required", 
+        animal_name: "required",
+        member_id: "required",
+        breed: "required",
+        color: "required",
         first_name: "required",
         last_name: "required",
         username: "required",
@@ -206,6 +354,11 @@
       },
       // Specify validation error messages
       messages: {
+        appo_animal: "<span style = 'color:red'>กรุณาเลือก ชนิดของสัตว์</span>",
+        animal_name: "<span style = 'color:red'>กรุณากรอก ชื่อสัตว์</span>",
+        member_id: "<span style = 'color:red'>กรุณากรอก เลขที่สมาชิก</span>",
+        breed: "<span style = 'color:red'>กรุณากรอก พันธุ์</span>",
+        color: "<span style = 'color:red'>กรุณากรอก สี</span>",
         first_name: "<span style = 'color:red'>กรุณากรอก ชื่อ</span>",
         last_name: "<span style = 'color:red'>กรุณากรอก นามสกุล</span>",
         username: "<span style = 'color:red'>กรุณากรอก ชื่อผู้ใช้งาน</span>",

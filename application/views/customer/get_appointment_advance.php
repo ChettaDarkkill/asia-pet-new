@@ -54,11 +54,11 @@
               <label class="col-md-4 control-label" for="name">วันที่</label>  
               <div class="col-md-8">
                     <div class="input-group date form_date col-md-5" data-date="" data-date-format="yyyy-mm-dd" data-link-field="appo_date" data-link-format="yyyy-mm-dd">
-                        <input id="appo_date_show" name="appo_date_show"  class="form-control" size="16" placeholder="วันที่" type="text" value="" readonly>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        <input id="appo_date_show" name="appo_date_show" value="<?php echo $dataSelect; ?>" class="form-control" size="16" placeholder="วันที่" type="text" value="" readonly>
+<!--                         <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                        <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span> -->
                     </div>
-                    <input type="hidden" id="appo_date" name="appo_date" value="" />
+                    <input type="hidden" id="appo_date" value="<?php echo $dataSelect; ?>" name="appo_date" value="" />
               </div>
             </div>
 
@@ -67,11 +67,11 @@
               <label class="col-md-4 control-label" for="vorname">เวลา</label>  
               <div class="col-md-8">
                     <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="appo_time" data-link-format="hh:ii">
-                      <input id="appo_time_show" name="appo_time_show" class="form-control" size="16" placeholder="เวลา" type="text" value="" readonly>
-                      <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
-                      <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span>
+                      <input id="appo_time_show" name="appo_time_show" class="form-control" size="16" placeholder="เวลา" type="text" value="<?php echo $timeSelect; ?>" readonly>
+<!--                       <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                      <span class="input-group-addon"><span class="glyphicon glyphicon-time"></span></span> -->
                     </div>
-                    <input type="hidden" id="appo_time" name="appo_time" value="" />
+                    <input type="hidden" id="appo_time" name="appo_time" value="<?php echo $timeSelect; ?>" />
               </div>
             </div>
             <!-- Button (Double) -->
@@ -138,7 +138,12 @@
             document.getElementById("appo_register").reset();
              $('#closeLoadingPanel').click();
              $('#imgShowMessage').attr("src", "<?php echo $a; ?>assets/img/success.svg");
-             $('#messageModalLabel').html('<h5>บันทึกการนัดหมายเรียบร้อยแล้ว<br/>กรุณารอการอนุมัติจากเจ้าหน้าที่ภายใน 24 ชั่วโมง<br/><a class="btn btn-primary" href="<?php echo $a; ?>index.php/Customer/Customer/edit_appointment">ตกลง</a></h5>');
+             $('#messageModalLabel').html('<h5>บันทึกการนัดหมายเรียบร้อยแล้ว<br/>กรุณาปริ้นใบนัดและไปตามเวลานัดหมาย<br/><a class="btn btn-primary" href="<?php echo $a; ?>index.php/Customer/Customer/get_appointment">ตกลง</a></h5>');
+             $('#clickToShowMessage').click();
+          } else if(data == "not_book_this_time") {
+             $('#closeLoadingPanel').click();
+             $('#imgShowMessage').attr("src", "<?php echo $a; ?>assets/img/danger.svg");
+             $('#messageModalLabel').html('<h5>สามารถจองได้ในช่วงเวลา 08:00 - 20:00 เท่านั้น</h5>');
              $('#clickToShowMessage').click();
           } else {
              $('#closeLoadingPanel').click();
@@ -154,27 +159,27 @@
   });
 </script>
 <script type="text/javascript">
-  $('.form_date').datetimepicker({
-        // language:  'th',
-        weekStart: 1,
-        todayBtn:  1,
-    autoclose: 1,
-    todayHighlight: 1,
-    startView: 2,
-    minView: 2,
-    forceParse: 0
-    });
-  $('.form_time').datetimepicker({
-        // language:  'th',
-        weekStart: 1,
-        todayBtn:  1,
-    autoclose: 1,
-    todayHighlight: 1,
-    startView: 1,
-    minView: 0,
-    maxView: 1,
-    forceParse: 0
-    });
+  // $('.form_date').datetimepicker({
+  //       // language:  'th',
+  //       weekStart: 1,
+  //       todayBtn:  1,
+  //   autoclose: 1,
+  //   todayHighlight: 1,
+  //   startView: 2,
+  //   minView: 2,
+  //   forceParse: 0
+  //   });
+  // $('.form_time').datetimepicker({
+  //       // language:  'th',
+  //       weekStart: 1,
+  //       todayBtn:  1,
+  //   autoclose: 1,
+  //   todayHighlight: 1,
+  //   startView: 1,
+  //   minView: 0,
+  //   maxView: 1,
+  //   forceParse: 0
+  //   });
 </script>
 <style>
 header .container {

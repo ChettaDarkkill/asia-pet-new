@@ -141,18 +141,80 @@
     <header>
         <div class="container" id="maincontent" tabindex="-1">
             <div class="row">
-                    <img class="img-responsive" src="<?php echo $a; ?>assets/icon/logo.svg" width = "250px">
-                    <div class="intro-text">
-                        <h1 class="name">Clinic pet Online System</h1>
-                        <hr class="star-light">
-                        <span class="skills">ระบบการบริการคลินิกสัตว์เลี้ยงเอเชียเพทแบบออนไลน์</span>
-                    </div>
+                <img class="img-responsive" src="<?php echo $a; ?>assets/icon/logo.svg" width = "250px">
+                <div class="intro-text">
+                    <h1 class="name">Clinic pet Online System</h1>
+                    <hr class="star-light">
+                    <span class="skills">ระบบการบริการคลินิกสัตว์เลี้ยงเอเชียเพทแบบออนไลน์</span>
                 </div>
+            </div>
+            <div min-height:530px; overflow-y:scroll;'>
+            <div class = "row">
+         <div class="col-md-12">
+                <div class="intro-text">
+                    <h1 style = "color:#373a47;" class="name">ข้อมูลข่าวสารประชาสัมพันธ์ของคลินิก</h1>
+                </div>
+                <hr>
+              <div style = 'text-align: left;!important;'>
+
+                    <?php if(count(getNewsData()) > 0) {
+                        foreach (getNewsData() as $key => $value) {
+
+                        $max_length = 150;
+                        $s = $value['details'];
+                        if (strlen($s) > $max_length)
+                        {
+                            $offset = ($max_length - 3) - strlen($s);
+                            $s = substr($s, 0, strrpos($s, ' ', $offset)) . '...';
+                        }
+
+                     ?>
+                     <div class="col-md-12 blogShort">
+                         <h1 style = "color:#373a47;"><?php echo $value['title']; ?><span> : <?php echo $s; ?> </span></h1>
+                   <!--       <article><span>
+                              <?php echo $s; ?>
+                             </span>
+                         </article> -->
+                    <div class="collapse" id="collapseExample<?php echo "_".$value['id']; ?>">
+                      <div class="card card-body">
+                        <?php echo $value['details']; ?>
+                      </div>
+                                <div class="fb-comments" id = "cmm_face" data-href="https://developers.facebook.com/docs/plugins/comments#configurator/clinic/animals/comment/<?php echo  $value['id']; ?>" data-width="844" data-numposts="5"></div>
+                    </div>
+    <!--                      <a class="btn btn-blog primary pull-right btn-show-detail marginBottom10" href = "<?php echo $a; ?>index.php/Customer/News/get_news_detail/<?php echo $value['id']; ?>" >อ่านเพิ่มเติม</a>  -->
+                          <a ids = "<?php echo $value['id']; ?>" class="btn btn-primary pull-right btn-show-detail marginBottom10" data-toggle="collapse" href="#collapseExample<?php echo "_".$value['id']; ?>" aria-expanded="false" aria-controls="collapseExample">
+                            อ่านเพิ่มเติม
+                          </a>
+                     </div>
+                        <hr>
+                     <?php } } else { ?>
+
+                     <p>ไม่มีข่าวสารของคลินิก</p>
+                     <?php } ?>
+                   <div class="col-md-12 gap10"></div>
+                 </div>
+
+              </div>
+            </div>
+            </div>
             </div>
         </div>
     </header>
     <?php }?>
+    <div id="fb-root"></div>
+    <script>(function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.9";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));</script>
+    <style type="text/css">
+        .btn-show-detail {
+            color: #ffffff;
+        }
 
+            </style>
     <script>
         function myLogout(){
             $('#clickToLoading').click();

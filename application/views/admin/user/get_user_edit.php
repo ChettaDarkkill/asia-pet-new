@@ -87,7 +87,13 @@
                           <label class="col-md-3 control-label" for="twitter"></label>  
                           <div class="col-md-6">
                           <button type="submit" id="saveRegis" class="btn btn-primary" data-action="save" role="button">บันทึก</button>
-                          <a class="btn btn-warning" href='<?php echo $a; ?>index.php/Admin/Admin/getUser'>ยกเลิก</a>
+
+                          <?php if($role == "admin") { ?>
+                            <a class="btn btn-warning" href='<?php echo $a; ?>index.php/Admin/Admin/getUser/admin'>ยกเลิก</a>
+                          <?php } else { ?>
+                            <a class="btn btn-warning" href='<?php echo $a; ?>index.php/Admin/Admin/getUser'>ยกเลิก</a>
+                          <?php } ?>
+
                           </div>
                         </div>
                         </fieldset>
@@ -118,7 +124,11 @@
                           <label class="col-md-3 control-label" for="twitter"></label>  
                           <div class="col-md-6">
                           <button type="submit" id="saveRegis" class="btn btn-primary" data-action="save" role="button">บันทึก</button>
-                          <a class="btn btn-warning" href='<?php echo $a; ?>index.php/Admin/Admin/getUser'>ยกเลิก</a>
+                          <?php if($role == "admin") { ?>
+                            <a class="btn btn-warning" href='<?php echo $a; ?>index.php/Admin/Admin/getUser/admin'>ยกเลิก</a>
+                          <?php } else { ?>
+                            <a class="btn btn-warning" href='<?php echo $a; ?>index.php/Admin/Admin/getUser'>ยกเลิก</a>
+                          <?php } ?>
                           </div>
                         </div>
                         

@@ -33,6 +33,13 @@ class Customer extends MX_Controller {
     );
     self::render($data);
   }
+  public function delete_appointment_advance($id = '') {
+    $dd = $_GET['dd'];
+    $tt = $_GET['tt'];
+    $this->customer_model->delete_appointment_advance($dd,$tt);
+    $this->session->set_flashdata('msg_success', 'ลบข้อมูลเรียบร้อยแล้ว');
+    redirect('/Customer/Customer/get_appointment');
+  }
   public function get_appointment(){
     $arrM = array(
         date("Y-m",strtotime(date('Y-m-d H:i:s'))) => showLongDate(date("m",strtotime(date('Y-m-d H:i:s'))),date("Y",strtotime(date('Y-m-d H:i:s'))),'th'),
@@ -48,8 +55,24 @@ class Customer extends MX_Controller {
   }
   public function get_appointment_advance()
   {
+
+    if(isset($_GET['dd'])) {
+      $dateSelect = $_GET['dd'];
+    }else {
+      $dateSelect = "";
+    }
+
+    if(isset($_GET['tt'])) {
+      $timeSelect = $_GET['tt'];
+    }else {
+      $timeSelect = "";
+    }
+
+
     $data = array(
         'path' => 'customer/get_appointment_advance',
+        'dataSelect' => $dateSelect,
+        'timeSelect' => $timeSelect,
         'data' => '',
     );
     self::render($data);

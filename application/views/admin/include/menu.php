@@ -47,9 +47,9 @@
                             <li>
                                 <a href="<?php echo $a.'index.php/Report/Report/reportService'; ?>">รายงานการรักษาและใช้บริการ</a>
                             </li>
-                            <li>
+<!--                             <li>
                                 <a href="<?php echo $a.'index.php/Report/Report/reportPayment'; ?>">รายงานสรุปจำนวน รายรับ ของร้าน</a>
-                            </li>
+                            </li> -->
                         </ul>
                     </li>
                 </ul>

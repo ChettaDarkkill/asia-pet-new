@@ -5,9 +5,9 @@
                         <li><a href='<?php echo $a; ?>index.php/Dashboard/Dashboard'>หน้าหลัก</a></li>
                         <li <?php echo $this->uri->segment(3) == "get_appointment" ? "class = 'active'" : '';?>><a href='<?php echo $a; ?>index.php/Customer/Customer/get_appointment'>ตรวจสอบการนัดหมาย</a></li>
                         <li <?php echo $this->uri->segment(3) == "get_customer_info" ? "class = 'active'" : '';?> ><a href = '<?php echo $a; ?>index.php/Customer/Customer/get_customer_info'>แก้ไขและจัดการข้อมูลส่วนตัว</a></li> 
-                        <li <?php echo $this->uri->segment(3) == "get_appointment_advance" ? "class = 'active'" : '';?>><a href='<?php echo $a; ?>index.php/Customer/Customer/get_appointment_advance'>ขอนัดหมายการเข้ารับบริการล่วงหน้า</a></li>
-                        <li <?php echo $this->uri->segment(3) == "see_appointment" ? "class = 'active'" : '';?>><a href='<?php echo $a; ?>index.php/Customer/Customer/see_appointment'>ปลิ้นใบนัด</a></li> 
-                        <li <?php echo $this->uri->segment(3) == "edit_appointment" || $this->uri->segment(3) == "editAppoint"  ? "class = 'active'" : '';?>><a href='<?php echo $a; ?>index.php/Customer/Customer/edit_appointment'>เปลี่ยนแปลง เวลา การนัดหมายล่วงหน้า</a></li>
+<!--                         <li <?php echo $this->uri->segment(3) == "get_appointment_advance" ? "class = 'active'" : '';?>><a href='<?php echo $a; ?>index.php/Customer/Customer/get_appointment_advance'>ขอนัดหมายการเข้ารับบริการล่วงหน้า</a></li> -->
+                        <li <?php echo $this->uri->segment(3) == "see_appointment" ? "class = 'active'" : '';?>><a href='<?php echo $a; ?>index.php/Customer/Customer/see_appointment'>ปริ้นใบนัด</a></li> 
+<!--                         <li <?php echo $this->uri->segment(3) == "edit_appointment" || $this->uri->segment(3) == "editAppoint"  ? "class = 'active'" : '';?>><a href='<?php echo $a; ?>index.php/Customer/Customer/edit_appointment'>เปลี่ยนแปลง เวลา การนัดหมายล่วงหน้า</a></li> -->
                         <li <?php echo $this->uri->segment(3) == "get_news" || $this->uri->segment(3) == "get_news_detail" ? "class = 'active'" : '';?>><a href='<?php echo $a; ?>index.php/Customer/Customer/get_news'>ข้อมูลข่าวสารประชาสัมพันธ์ของคลินิก</a></li> 
                     </ul>
              </nav>

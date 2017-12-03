@@ -47,7 +47,7 @@
                                 <span style = "color:red"> *** กรุณามาให้ตรงเวลาที่นัดหมายและนำใบนัดหมายมาด้วยทุกครั้งเพื่อความสะดวกในการให้บริการ</span><br/>
                                 <span> สถานที่ : เอเชียเพทออนไลน์ เลขที่ 320/12 ถนนพหลโยธิน ตำบลนครสวรรค์ตก อำเภอเมือง จังหวัดนครสวรรค์</span>
                                 <br/><br/>
-                                <a id = "print" onclick="myFunction()" class="btn btn-block btn-primary">ปลิ้นใบนัด</a>
+                                <a id = "print" onclick="myFunction()" class="btn btn-block btn-primary">ปริ้นใบนัด</a>
                             </div>
                         </div>
                     </div>

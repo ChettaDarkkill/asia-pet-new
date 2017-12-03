@@ -1,32 +1,36 @@
     <?php $a =  base_url(); ?>
     <div class="calendar" data-toggle="calendar">
       <br/>
-      <?php 
-       // echo '<pre>';
-       // print_r($list_m);
-       // die;
-    ?>  
       <div class="row">
-
         <?php foreach ($list_m['r1'] as $key_r1 => $value_r1) { ?>
         <div class="col-xs-12 calendar-day">
           <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
 
-          <?php if($value_r1 != '') { ?>
-
-            <div class="events">
-              <div class="event" ids = "<?php echo $value_r1['id']; ?>">
-                <h4><?php echo $value_r1['appo_animal'] . " : " . $value_r1['appo_details'] ; ?></h4>
-                <div class="location"> <span class="glyphicon glyphicon-map-marker"></span> เอเชียเพทคลินิก </div>
-                <div class="datetime"> <span class="glyphicon glyphicon-time"></span> <?php echo $value_r1['appo_time']?></div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="320" style="width: 100%;">
-                  </div>
-                </div>
+          <?php if(1 != 1) { ?>
+            <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
+              <div class="" ids = "<?php echo $value_r1['id']; ?>">
+                <span class="label label-danger pull-right">ข้อมูลการจอง</span>
               </div>
             </div>
-           <?php } ?>
+           <?php } else {
+              if(is_numeric($key_r1)) { 
+              if($mm.'-'.$key_r1  > $currentDate) {
+            ?>
+            <?php if($value_r1) { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-warning pull-right">จองเพิ่มเติม</span>
+              </div>
+            </div>
 
+          <?php  } else { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-primary pull-right">ว่าง</span>
+              </div>
+            </div>
+
+           <?php } } } } ?>
         </div>
         <?php } ?>
 
@@ -36,21 +40,31 @@
         <div class="col-xs-12 calendar-day">
           <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
 
-          <?php if($value_r1 != '') { ?>
-
-            <div class="events">
-              <div class="event" ids = "<?php echo $value_r1['id']; ?>">
-                <h4><?php echo $value_r1['appo_animal'] . " : " . $value_r1['appo_details'] ; ?></h4>
-                <div class="location"> <span class="glyphicon glyphicon-map-marker"></span> เอเชียเพทคลินิก </div>
-                <div class="datetime"> <span class="glyphicon glyphicon-time"></span> <?php echo $value_r1['appo_time']?></div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="320" style="width: 100%;">
-                  </div>
-                </div>
+          <?php if(1 != 1) { ?>
+            <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
+              <div class="" ids = "<?php echo $value_r1['id']; ?>">
+                <span class="label label-danger pull-right">ข้อมูลการจอง</span>
               </div>
             </div>
-           <?php } ?>
+           <?php } else {
+              if(is_numeric($key_r1)) { 
+              if($mm.'-'.$key_r1  > $currentDate) {
+            ?>
+            <?php if($value_r1) { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-warning pull-right">จองเพิ่มเติม</span>
+              </div>
+            </div>
 
+          <?php  } else { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-primary pull-right">ว่าง</span>
+              </div>
+            </div>
+
+           <?php } } } } ?>
         </div>
         <?php } ?>
       </div>
@@ -59,21 +73,31 @@
         <div class="col-xs-12 calendar-day">
           <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
 
-          <?php if($value_r1 != '') { ?>
-
-            <div class="events">
-              <div class="event" ids = "<?php echo $value_r1['id']; ?>">
-                <h4><?php echo $value_r1['appo_animal'] . " : " . $value_r1['appo_details'] ; ?></h4>
-                <div class="location"> <span class="glyphicon glyphicon-map-marker"></span> เอเชียเพทคลินิก </div>
-                <div class="datetime"> <span class="glyphicon glyphicon-time"></span> <?php echo $value_r1['appo_time']?></div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="320" style="width: 100%;">
-                  </div>
-                </div>
+          <?php if(1 != 1) { ?>
+            <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
+              <div class="" ids = "<?php echo $value_r1['id']; ?>">
+                <span class="label label-danger pull-right">ข้อมูลการจอง</span>
               </div>
             </div>
-           <?php } ?>
+           <?php } else {
+              if(is_numeric($key_r1)) { 
+              if($mm.'-'.$key_r1  > $currentDate) {
+            ?>
+            <?php if($value_r1) { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-warning pull-right">จองเพิ่มเติม</span>
+              </div>
+            </div>
 
+          <?php  } else { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-primary pull-right">ว่าง</span>
+              </div>
+            </div>
+
+           <?php } } } } ?>
         </div>
         <?php } ?>
       </div>
@@ -82,21 +106,31 @@
         <div class="col-xs-12 calendar-day">
           <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
 
-          <?php if($value_r1 != '') { ?>
-
-            <div class="events">
-              <div class="event" ids = "<?php echo $value_r1['id']; ?>">
-                <h4><?php echo $value_r1['appo_animal'] . " : " . $value_r1['appo_details'] ; ?></h4>
-                <div class="location"> <span class="glyphicon glyphicon-map-marker"></span> เอเชียเพทคลินิก </div>
-                <div class="datetime"> <span class="glyphicon glyphicon-time"></span> <?php echo $value_r1['appo_time']?></div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="320" style="width: 100%;">
-                  </div>
-                </div>
+          <?php if(1 != 1) { ?>
+            <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
+              <div class="" ids = "<?php echo $value_r1['id']; ?>">
+                <span class="label label-danger pull-right">ข้อมูลการจอง</span>
               </div>
             </div>
-           <?php } ?>
+           <?php } else {
+              if(is_numeric($key_r1)) { 
+              if($mm.'-'.$key_r1  > $currentDate) {
+            ?>
+            <?php if($value_r1) { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-warning pull-right">จองเพิ่มเติม</span>
+              </div>
+            </div>
 
+          <?php  } else { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-primary pull-right">ว่าง</span>
+              </div>
+            </div>
+
+           <?php } } } } ?>
         </div>
         <?php } ?>
       </div>
@@ -106,27 +140,115 @@
         <div class="col-xs-12 calendar-day">
           <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
 
-          <?php if($value_r1 != '') { ?>
-
-            <div class="events">
-              <div class="event" ids = "<?php echo $value_r1['id']; ?>">
-                <h4><?php echo $value_r1['appo_animal'] . " : " . $value_r1['appo_details'] ; ?></h4>
-                <div class="location"> <span class="glyphicon glyphicon-map-marker"></span> เอเชียเพทคลินิก </div>
-                <div class="datetime"> <span class="glyphicon glyphicon-time"></span> <?php echo $value_r1['appo_time']?></div>
-                <div class="progress">
-                  <div class="progress-bar" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="320" style="width: 100%;">
-                  </div>
-                </div>
+          <?php if(1 != 1) { ?>
+            <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
+              <div class="" ids = "<?php echo $value_r1['id']; ?>">
+                <span class="label label-danger pull-right">ข้อมูลการจอง</span>
               </div>
             </div>
-           <?php } ?>
+           <?php } else {
+              if(is_numeric($key_r1)) { 
+              if($mm.'-'.$key_r1  > $currentDate) {
+            ?>
+            <?php if($value_r1) { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-warning pull-right">จองเพิ่มเติม</span>
+              </div>
+            </div>
 
+          <?php  } else { ?>
+            <div class="events" data-toggle="modal">
+              <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
+                <span class="label label-primary pull-right">ว่าง</span>
+              </div>
+            </div>
+
+           <?php } } } } ?>
         </div>
         <?php } ?>
       </div>
 
     </div>
+      <!-- Modal -->
+  <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel" style="color:#333">เลือกช่วงเวลาที่ยังว่าง : <span id = "showtime"></span></h4>
+        </div>
+        <div class="modal-body">
+        <div class="span5" style="color: #333">
+              <div id = "get_booking_data" style="color: #333"></div>
+            </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+        </div>
+      </div>
+    </div>
+  </div>
+      <!-- Modal -->
+  <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 class="modal-title" id="myModalLabel" style="color:#333">ข้อมูลการจอง : <span id = "ddtShowTime"></span></h4>
+        </div>
+        <div class="modal-body">
+           <span id = "bookingResult" style="color: #333"></span>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">ปิด</button>
+          <button type="button" class="btn btn-primary addBooking">จองเพิ่มเติม</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
 <script>
+$(".addBooking").click(function(){
+  var dataSelect = $("#ddtShowTime").text();
+  var url = "<?php echo "/index.php/Customer/Customer/get_appointment_advance?dd="; ?>" + dataSelect;
+  window.location = url;
+});
+
+$("._data2").click(function(){
+   //$('#clickToLoading').click();
+  var dateShow =  $(this).attr('ddts');
+  $('#showtime').text(dateShow);
+
+  var data = dateShow;
+
+  var url = "<?php echo $a.'index.php/Customer/GetAppointment/getBookingDetails'; ?>";
+  $.post( url , {'data' : data} , function( data ) {
+    $("#get_booking_data").html(data);
+    //$('#closeLoadingPanel').click();
+  });
+
+
+  
+});
+
+$("._data1").click(function(){
+   //$('#clickToLoading').click();
+  var dateShow =  $(this).attr('ddt');
+  $('#ddtShowTime').text(dateShow);
+
+  var data = dateShow;
+
+  var url = "<?php echo $a.'index.php/Customer/GetAppointment/getResutlBooking'; ?>";
+  $.post( url , {'data' : data} , function( data ) {
+    $("#bookingResult").html(data);
+    //$('#closeLoadingPanel').click();
+  });
+
+
+  
+});
+
 $(document).ready(function(){
   showPop();
 
@@ -146,7 +268,7 @@ function showPop(){
         '<div class="attending">',
           $(this).find('div.attending').html(),
         '</div>',
-        '<a href="javascript:void(0);" class="btn btn-success" onClick=window.open("<?php echo $a."index.php/Customer/AppointmentAdvance/printTicket/22" ?>","Ratting","width=810,height=700,0,status=0,scrollbars=1"); role="button">ปลิ้นใบนัดหมาย</a>' 
+        '<a href="javascript:void(0);" class="btn btn-success" onClick=window.open("<?php echo $a."index.php/Customer/AppointmentAdvance/printTicket/22" ?>","Ratting","width=810,height=700,0,status=0,scrollbars=1"); role="button">ปริ้นใบนัดหมาย</a>' 
       ].join('\n');
 
     $('#pop1').attr('title', $('#pop1').find('h4').text());
@@ -178,7 +300,7 @@ $(function () {
         '<div class="attending">',
           $(this).find('div.attending').html(),
         '</div>',
-        '<a href="javascript:void(0);" class="btn btn-success" onClick=window.open("' + strL + '","Ratting","width=810,height=700,0,status=0,scrollbars=1"); role="button">ปลิ้นใบนัดหมาย</a>' 
+        '<a href="javascript:void(0);" class="btn btn-success" onClick=window.open("' + strL + '","Ratting","width=810,height=700,0,status=0,scrollbars=1"); role="button">ปริ้นใบนัดหมาย</a>' 
       ].join('\n');
 
     $(this).attr('title', $(this).find('h4').text());

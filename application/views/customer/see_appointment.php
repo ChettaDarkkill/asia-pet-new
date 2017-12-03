@@ -17,7 +17,7 @@
                               <th>เวลา</th>
                               <th>ประเภทสัตว์</th>
                               <th>สถานะ</th>
-                              <th>ปลิ้นใบนัด</th>
+                              <th>ปริ้นใบนัด</th>
                           </tr>
                       </thead>
                       <tfoot>
@@ -27,7 +27,7 @@
                               <th>เวลา</th>
                               <th>ประเภทสัตว์</th>
                               <th>สถานะ</th>
-                              <th>ปลิ้นใบนัด</th>
+                              <th>ปริ้นใบนัด</th>
                           </tr>
                       </tfoot>
                       <tbody>
@@ -65,7 +65,7 @@
                           </td>
                           <td>
                             <?php if($pp == 2) { ?>
-                            <a href="javascript:void(0);" class="btn-xs btn-success" onClick=window.open("<?php echo $a.'index.php/Customer/AppointmentAdvance/printTicket/'.$value['id']; ?>","Ratting","width=810,height=700,0,status=0,scrollbars=1");>ปลิ้นใบนัด</a>
+                            <a href="javascript:void(0);" class="btn-xs btn-success" onClick=window.open("<?php echo $a.'index.php/Customer/AppointmentAdvance/printTicket/'.$value['id']; ?>","Ratting","width=810,height=700,0,status=0,scrollbars=1");>ปริ้นใบนัด</a>
                               <!-- <button type="button" class="btn-xs btn-success">ปลิ้นใบนัด</button> -->
                             <?php } else { ?>
                               <span style = "color:red">เกินกำหนดวันนัด</span>

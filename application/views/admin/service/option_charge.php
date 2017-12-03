@@ -20,8 +20,10 @@
 
     <div class="container" id="tourpackages-carousel">
       <div class="row">
-        <div class="col-lg-12"><h1>สิ้นค้าทั้งหมด <a class="btn icon-btn btn-danger" onclick="return confirm('คุณต้องการที่จะยกเลิกจริงหรือไม่');" href ="<?php echo $a.'index.php/Admin/Admin'; ?>"><span></span> ยกเลิก</a>&nbsp;&nbsp;
+        <div class="col-lg-12"><h1>สินค้าทั้งหมด 
+          <!--   <a class="btn icon-btn btn-danger" onclick="return confirm('คุณต้องการที่จะยกเลิกจริงหรือไม่');" href ="<?php echo $a.'index.php/Admin/Admin'; ?>"><span></span> ยกเลิก</a>&nbsp;&nbsp; -->
         <button class="btn icon-btn btn-primary" type = 'submit'><span class="glyphicon btn-glyphicon glyphicon-plus img-circle"></span>ขั้นตอนต่อไป</button>
+          <a class="btn icon-btn btn-warning"  href ="<?php echo $a.'index.php/Service/Service/serviceCharge/'.$_GET['app_re_id']; ?>"><span></span> ย้อนกลับ</a>&nbsp;&nbsp;
         <!-- <a class="btn icon-btn btn-primary" href="<?php echo $a.'index.php/Service/Service/confirmCharge/'; ?>"><span class="glyphicon btn-glyphicon glyphicon-plus img-circle"></span> ขั้นตอนต่อไป</a> -->
         </h1></div>
         <?php if(count($data) > 0 ) { ?>
