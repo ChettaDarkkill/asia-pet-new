@@ -96,6 +96,31 @@
                 
               </div>
             </div>
+              <?php
+                $animal = getAnimalData();
+                $animalOwn = getUserData()['appo_animal'];
+              ?>
+             <div class="form-group">
+              <label class="col-md-3 control-label" for="twitter">ชนิดสัตว์</label>  
+              <div class="col-md-6">
+                <select class="form-control" id="appo_animal" name="appo_animal">
+                   <option value = "">กรุณาเลือก</option>
+                   <?php
+                    if(count( $animal) > 0 ) {
+                      foreach ( $animal as $key => $value) {
+
+                      if($value['animal_name'] == $animalOwn) {
+                         $ck = 'selected';
+                      } else {
+                         $ck = '';
+                      }
+                   ?>
+                   <option <?php echo $ck; ?> value = "<?php echo $value['animal_name']; ?>"><?php echo $value['animal_name']; ?></option>
+                   <?php } } ?>
+                </select>  
+                
+              </div>
+            </div>
             <!-- Text input-->
             <div class="form-group">
               <label class="col-md-3 control-label" for="twitter">พันธุ์</label>  
@@ -246,6 +271,11 @@
         // The key name on the left side is the name attribute
         // of an input field. Validation rules are defined
         // on the right side
+        appo_animal: "required", 
+        animal_name: "required",
+        member_id: "required",
+        breed: "required",
+        color: "required",
         first_name: "required",
         last_name: "required",
         username: "required",
@@ -254,6 +284,11 @@
       },
       // Specify validation error messages
       messages: {
+        appo_animal: "<span style = 'color:red'>กรุณาเลือก ชนิดของสัตว์</span>",
+        animal_name: "<span style = 'color:red'>กรุณากรอก ชื่อสัตว์</span>",
+        member_id: "<span style = 'color:red'>กรุณากรอก เลขที่สมาชิก</span>",
+        breed: "<span style = 'color:red'>กรุณากรอก พันธุ์</span>",
+        color: "<span style = 'color:red'>กรุณากรอก สี</span>",
         first_name: "<span style = 'color:red'>กรุณากรอก ชื่อ</span>",
         last_name: "<span style = 'color:red'>กรุณากรอก นามสกุล</span>",
         username: "<span style = 'color:red'>กรุณากรอก ชื่อผู้ใช้งาน</span>",

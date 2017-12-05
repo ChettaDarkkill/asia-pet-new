@@ -81,7 +81,95 @@
                             
                           </div>
                         </div>
+                                                <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="twitter">เลขที่สมาชิก</label>  
+                          <div class="col-md-6">
+                          <input id="member_id" name = "member_id" type="text" placeholder="เลขที่สมาชิก" class="form-control input-md" value = "<?php echo $listUser['member_id']; ?>">
+                            
+                          </div>
+                        </div>
+                        <hr>
+                        <h3>รายละเอียดอื่นๆ</h3>
 
+                                                <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="twitter">ชื่อสัตว์</label>  
+                          <div class="col-md-6">
+                          <input id="animal_name" name = "animal_name" type="text" placeholder="ชื่อสัตว์" class="form-control input-md" value = "<?php echo $listUser['animal_name']; ?>">
+                            
+                          </div>
+                        </div>
+
+                                                                        <!-- Text input-->
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="twitter">วันเกิดสัตว์</label>  
+                          <div class="col-md-6">
+                        <div class="input-group date form_date col-md-12" data-date="" data-date-format="yyyy-mm-dd" data-link-field="appo_date" data-link-format="yyyy-mm-dd">
+                            <input id="appo_birth_date_show_animal" name="appo_birth_date_show_animal"  class="form-control" size="16" placeholder="วันเกิดสัตว์" type="text" value="<?php echo $listUser['appo_birth_date_show_animal']; ?>" readonly >
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-remove"></span></span>
+                            <span class="input-group-addon"><span class="glyphicon glyphicon-calendar"></span></span>
+                        </div>
+                        <input type="hidden" id="appo_birth_date_animal" name="appo_birth_date_animal" value="<?php echo $listUser['appo_birth_date_show_animal']; ?>" />
+                            
+                          </div>
+                        </div>
+                      <?php
+                        $animal = getAnimalData();
+                        $appo_animal = $listUser['appo_animal'];
+                        
+                      ?>
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="twitter">ชนิดของสัตว์</label>  
+                          <div class="col-md-6">
+                        <select class="form-control" id="appo_animal" name="appo_animal">
+                           <option value = "">กรุณาเลือก</option>
+                           <?php
+                            if(count( $animal) > 0 ) {
+                              foreach ( $animal as $key => $value) {
+
+                              if($appo_animal == $value['animal_name']) {
+                                $ch = "selected";
+                              }else{
+                                $ch = "";
+                              }
+                           ?>
+                           <option <?php echo $ch; ?> value = "<?php echo $value['animal_name']; ?>"><?php echo $value['animal_name']; ?></option>
+                           <?php } } ?>
+                        </select>    
+                            
+                          </div>
+                        </div>
+
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="twitter">พันธุ์</label>  
+                          <div class="col-md-6">
+                          <input id="breed" name = "breed" type="text" placeholder="พันธุ์" class="form-control input-md" value = "<?php echo $listUser['breed']; ?>">
+                            
+                          </div>
+                        </div>
+                          <?php 
+                              $sex = $listUser['gender'];
+                          ?>
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="twitter">เพศ</label>  
+                          <div class="col-md-6">
+                          <div class="col-md-6">
+                            <div class="radio">
+                              <label><input <?php echo $sex == 1 ? "checked" : "";  ?> type="radio" name="gender" id="gender" value="1">ตัวผู้</label>
+                              <label><input <?php echo $sex == 0 ? "checked" : "";  ?>  type="radio" name="gender" id="gender" value="0">ตัวเมีย</label>
+                            </div>              
+                          </div>
+                            
+                          </div>
+                        </div>
+                        <div class="form-group">
+                          <label class="col-md-3 control-label" for="twitter">สี</label>  
+                          <div class="col-md-6">
+                          <input id="color" name = "color" type="text" placeholder="สี" class="form-control input-md" value = "<?php echo $listUser['color']; ?>">
+                            
+                          </div>
+                        </div>
                         <!-- Text input-->
                         <div class="form-group">
                           <label class="col-md-3 control-label" for="twitter"></label>  
@@ -149,12 +237,26 @@
   
   // When the browser is ready...
   $(function() {
-  
+    $('.form_date').datetimepicker({
+        // language:  'th',
+        weekStart: 1,
+        todayBtn:  1,
+    autoclose: 1,
+    todayHighlight: 1,
+    startView: 2,
+    minView: 2,
+    forceParse: 0
+    });
     // Setup form validation on the #register-form element
     $("#registration").validate({
     
         // Specify the validation rules
         rules: {
+          appo_animal: "required", 
+          animal_name: "required",
+          member_id: "required",
+          breed: "required",
+          color: "required",
           first_name: "required",
           last_name: "required",
           username: "required",
@@ -164,6 +266,11 @@
         
         // Specify the validation error messages
         messages: {
+          appo_animal: "<span style = 'color:red'>กรุณาเลือก ชนิดของสัตว์</span>",
+          animal_name: "<span style = 'color:red'>กรุณากรอก ชื่อสัตว์</span>",
+          member_id: "<span style = 'color:red'>กรุณากรอก เลขที่สมาชิก</span>",
+          breed: "<span style = 'color:red'>กรุณากรอก พันธุ์</span>",
+          color: "<span style = 'color:red'>กรุณากรอก สี</span>",
           first_name: "<span style = 'color:red'>กรุณากรอก ชื่อ</span>",
           last_name: "<span style = 'color:red'>กรุณากรอก นามสกุล</span>",
           username: "<span style = 'color:red'>กรุณากรอก ชื่อผู้ใช้งาน</span>",

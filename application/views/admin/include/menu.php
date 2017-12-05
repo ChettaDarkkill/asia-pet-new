@@ -22,7 +22,9 @@
                             </li>
                         </ul>
                     </li> 
-
+                    <li <?php echo $this->uri->segment(3) == "getAnimal" || $this->uri->segment(3) == "addAnimal" || $this->uri->segment(3) == "getAnimal" ? "class = 'active'" : '';?>>
+                        <a href="<?php echo $a.'index.php/Admin/Admin/getAnimal'; ?>"><i class="fa fa-fw fa-file"></i> สัตว์เลี้ยง</a>
+                    </li>
                     <li <?php echo $this->uri->segment(3) == "editAppo" || $this->uri->segment(3) == "detailAppo"  || $this->uri->segment(3) == "cancelAppo" ? "class = 'active'" : '';?>>
                         <a href="<?php echo $a.'index.php/Admin/Admin/editAppo'; ?>"><i class="fa fa-fw fa-table"></i> การนัดหมาย</a>
                     </li>

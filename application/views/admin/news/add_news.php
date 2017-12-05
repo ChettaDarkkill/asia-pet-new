@@ -45,7 +45,7 @@
                               <label><input checked id = 'flag' name = 'flag' type="radio" value = '1'>ใช้งาน</label>
                             </div>
                             <div class="radio">
-                              <label><input id = 'flag' name = 'flag' type="radio" value = '2'>ไม่ใช้งาน</label>
+                              <label><input id = 'flag' name = 'flag' type="radio" value = '2'>หมดเขต</label>
                             </div>
                           </div>
                         </div>

@@ -19,7 +19,7 @@
                           <?php
                             if($value['idm'] == getUserData()['id']) { 
                           ?>
-                                     <a href="javascript:void(0);" class="label label-primary" onClick=window.open("<?php echo $a.'index.php/Customer/AppointmentAdvance/printTicket/'.$value['id']; ?>","Ratting","width=810,height=700,0,status=0,scrollbars=1");>ปริ้นใบนัด</a>
+                                     <a href="javascript:void(0);" class="label label-primary" onClick=window.open("<?php echo $a.'index.php/Customer/AppointmentAdvance/printTicket/'.$value['id']; ?>","Ratting","width=810,height=500,0,status=0,scrollbars=1");>ปริ้นใบนัด</a>
                           <?php } else { ?> 
                             <span class="label label-success">จองแล้ว</span>
                           <?php } ?> 

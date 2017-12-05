@@ -1,7 +1,14 @@
     <?php $a =  base_url(); ?>
     <?php
         $data = $data[0];
+
+
         $user = getUserData();
+
+        // echo '<pre>';
+        // print_r($data);
+        // print_r($user);
+        // die;
     ?>
     <!-- Bootstrap Core CSS -->
     <link href="<?php echo $a; ?>assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -17,15 +24,21 @@
                         <div class="box">
                             <div class="box-content">
                                 <div style = 'text-align: left;!important; margin-left:10px;  font-size:16px'>
-<!--                                 <span><strong>เลขที่นัดหมาย : </strong></span><span><?php echo $data['trans_id']; ?></span><br/>
-                                <span><strong>ชื่อ : </strong></span><span><?php echo $user['first_name'] . " " . $user['last_name'] ; ?></span><br/> -->
+                                <span><strong>เลขที่นัดหมาย : </strong></span><span><?php echo $data['trans_id']; ?></span><br/>
                                 <span><strong>ที่อยู่ : </strong></span><span><?php echo $user['address']; ?></span><br/>
-                                <span><strong>เบอร์โทร : </strong></span><span><?php echo $user['mobile']; ?></span>&nbsp;&nbsp;<span><strong>เวลาเปิด-ปิด : </strong></span><span>08.00-20.00</span><br/><hr/>
-                                <span><strong>ประเภทสัตว์ : </strong></span><span><?php echo $data['appo_animal']; ?></span><br/>
-                                <span><strong>เรื่องที่นัดหมาย : </strong></span><span><?php echo $data['appo_name']; ?></span><br/>
-                                <span><strong>รายละเอียด : </strong></span><span><?php echo $data['appo_details']; ?></span><br/>
-                                <span><strong>สถานะ : </strong></span>อนุมัติแล้ว<span><br/><hr/>
-                                <span><strong>วัน - เวลา ที่นัดหมาย</strong></span><br/><br/>
+                                <span><strong>เบอร์โทร : </strong></span><span><?php echo $user['mobile']; ?></span>
+                                &nbsp;&nbsp;<span style="margin-left: 20px"><strong>เวลาเปิด-ปิด : </strong></span><span>08.00-20.00</span><br/><hr/>
+                                <span><strong>ชื่อสัตว์เลี้ยง : </strong></span><span><?php echo $user['animal_name']; ?></span><br/>
+                                <span><strong>วันเกิด : </strong></span><span><?php echo $user['appo_birth_date_show_animal']; ?></span>
+                                &nbsp;&nbsp;<span style="margin-left: 20px"><strong>เพศ : </strong></span><span>
+                                <?php echo $user['gender'] == 0 ? "ตัวเมีย":"ตัวผู้" ?>
+                                </span><br/>
+                                <span><strong>ชื่อเจ้าของ : </strong></span><span><?php echo $user['first_name']." ".$user['last_name']; ?></span>
+                                &nbsp;&nbsp;<span style="margin-left: 20px"><strong>เลขที่สมาชิก : </strong></span><span><?php echo $user['member_id']; ?></span><br/> 
+                                <hr/>  
+                                <span><strong>รายละเอียด : </strong></span><br/>
+                                <?php echo $data['appo_details']; ?>
+                                <br/><hr/>                       
                                 </div>
                                 <div class="agenda">
                                     <div class="table-responsive">

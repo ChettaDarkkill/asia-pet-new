@@ -12,8 +12,24 @@
             <fieldset>
             <!-- Form Name -->
             <legend></legend>
-
+            <?php
+              $user = getUserData();
+            ?>
+                        <!-- Text input-->
             <div class="form-group">
+              <label class="col-md-4 control-label" for="appo_name">ชนิดของสัตว์</label>  
+              <div class="col-md-4">
+              <input value = "<?php echo $user['appo_animal']; ?>" id="appo_animal" name="appo_animal" readonly type="text" placeholder="ชนิดของสัตว์" class="form-control input-md">
+                
+              </div>
+            </div>
+            <div class="form-group">
+              <label class="col-md-4 control-label" for="appo_name">ชื่อสัตว์</label>  
+             <div class="col-md-4">
+              <?php echo $user['animal_name']; ?>    
+              </div>
+            </div>
+<!--             <div class="form-group">
               <label class="col-md-4 control-label" for="appo_name">ชนิดของสัตว์</label>  
               <div class="col-md-4">
                 <select class="form-control" id="appo_animal" name="appo_animal">
@@ -30,7 +46,7 @@
                   <option value = "ปลา (Fish)">ปลา (Fish)</option>
                 </select>                
               </div>
-            </div>
+            </div> -->
 
             <!-- Text input-->
             <div class="form-group">

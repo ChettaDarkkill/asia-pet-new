@@ -24,6 +24,7 @@ class Admin extends MXAdmin_Controller {
      parent::__construct();
      $this->load->model('Admin/Dashboard_model', 'dashboard_model');
      $this->load->model('Customer/Customer_model', 'customer_model');
+     $this->load->model('Admin/UserAdmin_model', 'user_admin_model');
       $this->load->model('Report/Report_model', 'report_model');
   }
   public function index(){
@@ -38,6 +39,58 @@ class Admin extends MXAdmin_Controller {
     $data = array(
         'path' => 'admin/dashboard/dashboard',
         'data' => $data,
+    );
+    self::render($data);
+  }
+  public function deleteAnimal($id) {
+       $this->user_admin_model->delAnimal($id);
+       $this->session->set_flashdata('msg_success', 'ทำการลบข้อมูลเรียบร้อยแล้ว');
+       redirect('/Admin/Admin/getAnimal');
+  }
+  public function editAnimal($id) {
+    $result = $this->user_admin_model->getAnimalById($id);
+    $data = array(
+        'path' => 'admin/animal/get_animal_edit2',
+        'data' => $result
+    );
+    self::render($data);
+  }
+  public function postEditAnimal() {
+    $id =  $this->input->post('id_hide');
+    $animal_name = $this->input->post("animal_name");
+    $animal_detail = $this->input->post("animal_detail");
+    $arr = array(
+      'animal_name'=> $animal_name,
+      'animal_detail'=> $animal_detail
+    );
+    $this->user_admin_model->postEditAnimal($arr, $id );
+    $this->session->set_flashdata('msg_success', 'แก้ไขชนิดสัตว์เลี้ยงเรียบร้อยแล้ว');
+    redirect('/Admin/Admin/getAnimal');
+  }
+  public function postAddAnimal() {
+    $animal_name = $this->input->post("animal_name");
+    $animal_detail = $this->input->post("animal_detail");
+      $arr = array(
+        'animal_name'=> $animal_name,
+        'animal_detail'=> $animal_detail
+      );
+    $this->user_admin_model->postAddAnimal($arr);
+    $this->session->set_flashdata('msg_success', 'เพิ่มชนิดสัตว์เลี้ยงเรียบร้อยแล้ว');
+    redirect('/Admin/Admin/getAnimal');
+  }
+  public function addAnimal() {
+    $data = '';
+    $data = array(
+        'path' => 'admin/animal/get_animal_edit',
+        'data' => $data
+    );
+    self::render($data);
+  }
+  public function getAnimal() {
+    $animalData = $this->user_admin_model->getAddAnimal();
+    $data = array(
+        'path' => 'admin/animal/get_animal',
+        'data' => $animalData
     );
     self::render($data);
   }
@@ -60,7 +113,7 @@ class Admin extends MXAdmin_Controller {
     self::render($data);
   }
   public function editAppo($flag = ''){
-    $data['data1'] = $result = $this->dashboard_model->getAppoList(1);
+    $data['data1'] = $result = $this->dashboard_model->getAppoList(3);
     $data['data2'] = $result = $this->dashboard_model->getAppoList(3);
     $data['data3'] = $result = $this->dashboard_model->getAppoList(2);
     $data = array(

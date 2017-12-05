@@ -16,4 +16,11 @@ class News_model extends CI_Model {
          $result = $result->result_array();
          return $result;
     }
+
+    public function getAnimals(){
+         $result = $this->db->get('clinic_animal');
+         $result = $result->result_array();
+         return $result;
+    }
+
 }

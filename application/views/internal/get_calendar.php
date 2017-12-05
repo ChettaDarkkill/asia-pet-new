@@ -4,7 +4,7 @@
       <div class="row">
         <?php foreach ($list_m['r1'] as $key_r1 => $value_r1) { ?>
         <div class="col-xs-12 calendar-day">
-          <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
+          <time datetime="2014-07-03"><h4 style="color: blue"><?php echo $key_r1; ?></h4></time>
 
           <?php if(1 != 1) { ?>
             <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
@@ -15,8 +15,10 @@
            <?php } else {
               if(is_numeric($key_r1)) { 
               if($mm.'-'.$key_r1  > $currentDate) {
+               echo "<h4 >".getThaiDayofWeek($mm.'-'.$key_r1)."</h4><br>";
             ?>
             <?php if($value_r1) { ?>
+
             <div class="events" data-toggle="modal">
               <div ddts = "<?php echo $mm.'-'.$key_r1; ?>" class="events _data2" data-toggle="modal" data-target="#myModal2">
                 <span class="label label-warning pull-right">จองเพิ่มเติม</span>
@@ -38,7 +40,7 @@
       <div class="row">
         <?php foreach ($list_m['r2'] as $key_r1 => $value_r1) { ?>
         <div class="col-xs-12 calendar-day">
-          <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
+          <time datetime="2014-07-03"><h4 style="color: blue"><?php echo $key_r1; ?></h4></time>
 
           <?php if(1 != 1) { ?>
             <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
@@ -49,6 +51,7 @@
            <?php } else {
               if(is_numeric($key_r1)) { 
               if($mm.'-'.$key_r1  > $currentDate) {
+                echo "<h4>".getThaiDayofWeek($mm.'-'.$key_r1)."</h4><br>";
             ?>
             <?php if($value_r1) { ?>
             <div class="events" data-toggle="modal">
@@ -71,7 +74,7 @@
       <div class="row">
         <?php foreach ($list_m['r3'] as $key_r1 => $value_r1) { ?>
         <div class="col-xs-12 calendar-day">
-          <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
+          <time datetime="2014-07-03"><h4 style="color: blue"><?php echo $key_r1; ?></h4></time>
 
           <?php if(1 != 1) { ?>
             <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
@@ -82,6 +85,7 @@
            <?php } else {
               if(is_numeric($key_r1)) { 
               if($mm.'-'.$key_r1  > $currentDate) {
+                echo "<h4>".getThaiDayofWeek($mm.'-'.$key_r1)."</h4><br>";
             ?>
             <?php if($value_r1) { ?>
             <div class="events" data-toggle="modal">
@@ -104,7 +108,7 @@
       <div class="row">
         <?php foreach ($list_m['r4'] as $key_r1 => $value_r1) { ?>
         <div class="col-xs-12 calendar-day">
-          <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
+          <time datetime="2014-07-03"><h4 style="color: blue"><?php echo $key_r1; ?></h4></time>
 
           <?php if(1 != 1) { ?>
             <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
@@ -115,6 +119,7 @@
            <?php } else {
               if(is_numeric($key_r1)) { 
               if($mm.'-'.$key_r1  > $currentDate) {
+                echo "<h4>".getThaiDayofWeek($mm.'-'.$key_r1)."</h4><br>";
             ?>
             <?php if($value_r1) { ?>
             <div class="events" data-toggle="modal">
@@ -138,7 +143,7 @@
       <div class="row">
         <?php foreach ($list_m['r5'] as $key_r1 => $value_r1) { ?>
         <div class="col-xs-12 calendar-day">
-          <time datetime="2014-07-03"><?php echo $key_r1; ?></time>
+          <time datetime="2014-07-03"><h4 style="color: blue"><?php echo $key_r1; ?></h4></time>
 
           <?php if(1 != 1) { ?>
             <div ddt = "<?php echo $value_r1['appo_date']; ?>" class="events _data1" data-toggle="modal" data-target="#myModal">
@@ -149,6 +154,7 @@
            <?php } else {
               if(is_numeric($key_r1)) { 
               if($mm.'-'.$key_r1  > $currentDate) {
+                echo "<h4>".getThaiDayofWeek($mm.'-'.$key_r1)."</h4><br>";
             ?>
             <?php if($value_r1) { ?>
             <div class="events" data-toggle="modal">
@@ -268,7 +274,7 @@ function showPop(){
         '<div class="attending">',
           $(this).find('div.attending').html(),
         '</div>',
-        '<a href="javascript:void(0);" class="btn btn-success" onClick=window.open("<?php echo $a."index.php/Customer/AppointmentAdvance/printTicket/22" ?>","Ratting","width=810,height=700,0,status=0,scrollbars=1"); role="button">ปริ้นใบนัดหมาย</a>' 
+        '<a href="javascript:void(0);" class="btn btn-success" onClick=window.open("<?php echo $a."index.php/Customer/AppointmentAdvance/printTicket/22" ?>","Ratting","width=500,height=700,0,status=0,scrollbars=1"); role="button">ปริ้นใบนัดหมาย</a>' 
       ].join('\n');
 
     $('#pop1').attr('title', $('#pop1').find('h4').text());
@@ -300,7 +306,7 @@ $(function () {
         '<div class="attending">',
           $(this).find('div.attending').html(),
         '</div>',
-        '<a href="javascript:void(0);" class="btn btn-success" onClick=window.open("' + strL + '","Ratting","width=810,height=700,0,status=0,scrollbars=1"); role="button">ปริ้นใบนัดหมาย</a>' 
+        '<a href="javascript:void(0);" class="btn btn-success" onClick=window.open("' + strL + '","Ratting","width=810,height=500,0,status=0,scrollbars=1"); role="button">ปริ้นใบนัดหมาย</a>' 
       ].join('\n');
 
     $(this).attr('title', $(this).find('h4').text());

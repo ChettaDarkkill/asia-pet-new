@@ -142,20 +142,19 @@
                     </div>
                     <input type="hidden" id="appo_birth_date_animal" name="appo_birth_date_animal" value="" />
             </div>
+              <?php
+                $animal = getAnimalData();
+              ?>
               <div class="form-group">
               <label>ชนิดของสัตว์</label>  
                 <select class="form-control" id="appo_animal" name="appo_animal">
                    <option value = "">กรุณาเลือก</option>
-                  <option value = "สุนัข (Dog)">สุนัข (Dog)</option>
-                  <option value = "แมว (Cat)">แมว (Cat)</option>
-                  <option value = "กระต่าย (Rabbit)">กระต่าย (Rabbit)</option>
-                  <option value = "ชินชิล่า (Chinchilla)">ชินชิล่า (Chinchilla)</option>
-                  <option value = "ชูการ์ ไกรเดอร์ (Suger Glider)">ชูการ์ ไกรเดอร์ (Suger Glider)</option>
-                  <option value = "กระรอก (Squirrel)">กระรอก (Squirrel) </option>
-                  <option value = "นก (Bird)">นก (Bird)</option>
-                  <option value = "แฮมสเตอร์ (Hamster)">แฮมสเตอร์ (Hamster)</option>
-                  <option value = "แกสบี้ (Guinea Pig)">แกสบี้ (Guinea Pig)</option>
-                  <option value = "ปลา (Fish)">ปลา (Fish)</option>
+                   <?php
+                    if(count( $animal) > 0 ) {
+                      foreach ( $animal as $key => $value) {
+                   ?>
+                   <option value = "<?php echo $value['animal_name']; ?>"><?php echo $value['animal_name']; ?></option>
+                   <?php } } ?>
                 </select>                
             </div>
             <div class="form-group">

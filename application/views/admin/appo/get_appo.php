@@ -68,7 +68,7 @@
                                 <a href = "<?php echo $a.'index.php/Admin/Appointment/detailAppo/'.$value['id']; ?>" class="btn btn-sm btn-info">ดูรายละเอียด</a>
                                 <a href = "<?php echo $a.'index.php/Admin/Appointment/deleteAppo/'.$value['id']; ?>" class="btn btn-sm btn-danger" onclick="return confirm('คุณต้องการที่จะลบหรือไม่');">ลบ</a>
                                 <a href = "<?php echo $a.'index.php/Admin/Appointment/cancelAppo/'.$value['id']; ?>" class="btn btn-sm btn-warning">ยกเลิกนัด</a>
-                                <a href = "<?php echo $a.'index.php/Admin/Appointment/approveAppo/'.$value['id']; ?>" class="btn btn-sm btn-success" onclick="return confirm('คุณต้องการอนุมัติจริงหรือไม่');">อนุมัติ</a>
+<!--                                 <a href = "<?php echo $a.'index.php/Admin/Appointment/approveAppo/'.$value['id']; ?>" class="btn btn-sm btn-success" onclick="return confirm('คุณต้องการอนุมัติจริงหรือไม่');">อนุมัติ</a> -->
                             </td>
                       </tr>
                       <?php } } ?>

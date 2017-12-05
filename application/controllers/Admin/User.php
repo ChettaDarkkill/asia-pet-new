@@ -116,12 +116,24 @@ class User extends MXAdmin_Controller {
       $username =  $this->input->post('username');
       $address =  $this->input->post('address');
       $mobile =  $this->input->post('mobile');
+      //aditional
+      $animal_name =  $this->input->post('animal_name');
+      $appo_birth_date_show_animal =  $this->input->post('appo_birth_date_show_animal');
+      $breed =  $this->input->post('breed');
+      $gender =  $this->input->post('gender');
+      $color =  $this->input->post('color');
+
       $arr = array(
         'first_name'=> $first_name,
         'last_name'=> $last_name,
         'username'=> $username,
         'address'=> $address,
-        'mobile'=> $mobile
+        'mobile'=> $mobile,
+        'animal_name' => $animal_name,
+        'appo_birth_date_show_animal' => $appo_birth_date_show_animal,
+        'breed' => $breed,
+        'gender' => $gender,
+        'color' => $color
       );
       $this->user_admin_model->post_edit_user($arr, $id);
       $this->session->set_flashdata('msg_success', 'แก้ไขข้อมูลเรียบร้อยแล้ว');
